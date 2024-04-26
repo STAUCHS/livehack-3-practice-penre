@@ -1,6 +1,6 @@
 class Main extends ConsoleProgram {
   public void run() {
-    System.out.print(countHi("nihilihi"));
+    System.out.print(endOther("abc" , "hiabc"));
   }
   /**
    * make a program that repeats everyletter in a string 
@@ -128,10 +128,41 @@ class Main extends ConsoleProgram {
     }
     return result;
   } 
-  public String endOther(String str, String sstr){
-    
+  /**
+   * 
+   * @param str
+   * @param sstr
+   * @return
+   */
+  public boolean endOther(String str, String sstr){
+    boolean result;
+
+    if (str.length() < sstr.length()){
+      for (int i = 0; i < sstr.length(); i++){
+        if (sstr.substring(sstr.indexOf(str) , str.length()).equals(str)){
+          result = true;
+          return result;
+        }
+      }  
+    }
+    else if (sstr.length() < str.length()){
+      for (int i = 0; i < str.length(); i++){
+        if (str.substring(str.indexOf(sstr) , sstr.length()).equals(sstr)){
+          result = true;
+          return result;
+        }
+      }
+    }
+    else if (sstr.length() == str.length()){
+      result = false;
+      return result;
+    }
+    result = true;
+    return result;
   }
-  }
+
+}
+  
 
 
   
