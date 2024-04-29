@@ -1,6 +1,6 @@
 class Main extends ConsoleProgram {
   public void run() {
-    System.out.print(endOther("abc" , "hiabc"));
+    System.out.println(dateFashion(5 , 2));
   }
   /**
    * make a program that repeats everyletter in a string 
@@ -159,6 +159,27 @@ class Main extends ConsoleProgram {
     }
     result = true;
     return result;
+  }
+  /**
+   * print 1 , 0 , 2 based on you or date's fashion
+   * @param you
+   * @param date
+   * @return
+   */
+  public int dateFashion(int you, int date){
+    
+
+    if ( you >= 8 || date >= 8){
+      
+      return 2;
+    }
+    else if ( you <= 2 || date <=2){
+      
+      return 0;
+    }
+    else {
+      return 1;
+    }
   }
 
 }
