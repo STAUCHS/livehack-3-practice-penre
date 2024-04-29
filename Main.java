@@ -1,6 +1,6 @@
 class Main extends ConsoleProgram {
   public void run() {
-    System.out.println(dateFashion(5 , 2));
+    System.out.println(shareDigit(12,44));
   }
   /**
    * make a program that repeats everyletter in a string 
@@ -162,9 +162,9 @@ class Main extends ConsoleProgram {
   }
   /**
    * print 1 , 0 , 2 based on you or date's fashion
-   * @param you
+   * @param you 
    * @param date
-   * @return
+   * @return 
    */
   public int dateFashion(int you, int date){
     
@@ -181,9 +181,172 @@ class Main extends ConsoleProgram {
       return 1;
     }
   }
+  /**
+   * Given 2 ints, a and b, return their sum. However, sums in the range 10..19 inclusive, are forbidden, so in that case just return 20.
+   * @param a
+   * @param b
+   * @return
+   */
+  public int sortaSum( int a, int b){
 
+    int intSum;
+    intSum = a + b;
+
+    if (intSum <= 19 && intSum >= 10){
+      return 20;
+    }
+    else {
+      return intSum;
+    }
+  }
+  /**
+   * 
+   * @param a
+   * @param outsideMode
+   * @return
+   */
+  public boolean in1To10(int a, boolean outsideMode) {
+
+    if ( a >= 1 && a <= 10) {
+      return true;
+    }
+    else if ( a <= 1 || a >= 10 && outsideMode == true){
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
+  /**
+   * 
+   * @param n
+   * @return
+   */
+  public boolean old35(int n) {
+
+    if ( n % 5 == 0 || n % 3 == 0){
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
+  /**
+   * 
+   * @param a
+   * @param b
+   * @return
+   */
+  public int teenSum(int a , int b){
+
+    int intSum = a + b;
+
+    if ( a < 13 || a > 19 && b < 13 || b > 19){
+      return intSum;
+    }
+    else if ( a >= 13 || a <= 19 || b >= 13 || b <= 19) {
+      return 19;
+    }
+    else {
+      return 19;
+    }
+  }
+  /**
+   * 
+   * @param str
+   * @return
+   */
+  public String fizzString(String str){
+
+    if ( str.substring(0, 1).equals("f") && str.substring(str.length() - 1).equals("b")){
+      return "fizzbuzz"; 
+    }
+    else if ( str.substring(str.length() - 1).equals("b")){
+      return "buzz";
+    }
+    else if ( str.substring(0, 1).equals("f")){
+      return "fizz";
+    } 
+    else {
+      return str;
+    }
+  }
+  /**
+   * 
+   * @param a
+   * @param b
+   * @param c
+   * @param bOk
+   * @return
+   */
+  public boolean inOrder(int a, int b, int c, boolean bOk){
+
+    if ( b > a && c > b){
+      return true;
+    }
+    else if (b < a && c > b || b > a && c < b){
+      return false;
+    }
+    else if (bOk == true && c > b){
+      return true;
+    }
+    else {
+      return false;
+    }
+
+  }
+  /**
+   * 
+   * @param a
+   * @param b
+   * @param c
+   * @return
+   */
+  public boolean lessBy10(int a, int b, int c){
+    
+    if ( a - b >= 10 || a - c >= 10){
+      return true;
+    }
+    else if (b - a >= 10 || b - c >= 10){
+      return true;
+    }
+    else if (c - a >= 10 || c - b >= 10){
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
+  /**
+   * 
+   * @param a
+   * @param b
+   * @param c
+   * @return
+   */
+  public int redTicket(int a, int b, int c){
+
+    if ( a == 2 && b == 2 && c == 2){
+      return 10;
+    }
+    else if (a == b && b == c && a == c){
+      return 5;
+    }
+    else {
+      return 0;
+    }
+  }
+  public boolean shareDigit(int a, int b){
+
+    if ( a / 10 == b / 10 || a % 10 == b % 10){
+      return true;
+    }
+    else if ( a / 10 == b % 10 || a % 10 == b / 10){
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
 }
-  
-
-
   
